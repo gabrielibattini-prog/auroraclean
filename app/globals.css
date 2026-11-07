@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+/*
+ * Tokens do Guia de Estilos Aurora Clean (design system v1 · nov 2026).
+ * Nunca usar cor solta no código: sempre estes tokens (classes bg-*, text-*, border-*).
+ */
+:root {
+  color-scheme: light;
+
+  /* Marca e acentos */
+  --brand-olive: #616850;
+  --brand-olive-deep: #4a5039;
+  --brand-olive-soft: #e6e9d9;
+  --brand-cream: #f2e0c7;
+  --brand-cream-deep: #e2c9a6;
+  --brand-stone: #7f7b77;
+  --accent-clay: #9a5638;
+  --accent-clay-soft: #f9ece4;
+  --gold: #e5a93b;
+
+  /* Superfícies e texto */
+  --surface-page: #fbf6ee;
+  --surface-card: #ffffff;
+  --surface-sunken: #f5ede1;
+  --ink: #2e2b27;
+  --ink-muted: #5e5a56;
+  --on-brand: #ffffff;
+  --line: #e8dfd2;
+  --line-strong: #8c877f;
+  --focus: #2f5e7a;
+
+  /* Estados */
+  --success: #2f6b3f;
+  --success-soft: #e1efdf;
+  --warning: #8a5a0b;
+  --warning-soft: #fbebc9;
+  --danger: #a3352b;
+  --danger-soft: #f8deda;
+  --danger-solid: #b8433a;
+  --info: #2f5e7a;
+  --info-soft: #dceaf2;
+
+  /* Ícones */
+  --icon-main: #616850;
+  --icon-shade: #4a5039;
+  --icon-fill: #f2e0c7;
+  --icon-shine: #ffffff;
+  --icon-accent: #b9734f;
+  --icon-gold: #e5a93b;
+  --icon-muted: #b9b4ad;
+
+  /* Acento do modo (cliente = oliva, prestador = terracota) */
+  --modo-acento: var(--brand-olive);
+  --modo-acento-soft: var(--brand-olive-soft);
+}
+
+[data-modo="prestador"] {
+  --modo-acento: var(--accent-clay);
+  --modo-acento-soft: var(--accent-clay-soft);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --brand-olive: #a9b48a;
+    --brand-olive-deep: #7f8a62;
+    --brand-olive-soft: #2e3324;
+    --brand-cream: #3b3327;
+    --brand-cream-deep: #2c261d;
+    --brand-stone: #9a958f;
+    --accent-clay: #e8a17f;
+    --accent-clay-soft: #3a2a21;
+    --gold: #f2c66d;
+    --surface-page: #1c1e17;
+    --surface-card: #272a20;
+    --surface-sunken: #15170f;
+    --ink: #f4ebdd;
+    --ink-muted: #c9c0b3;
+    --on-brand: #1c1e17;
+    --line: #3a3d31;
+    --line-strong: #827e77;
+    --focus: #9cc7e2;
+    --success: #9ed3a6;
+    --success-soft: #21311f;
+    --warning: #f2c66d;
+    --warning-soft: #352a12;
+    --danger: #f3a097;
+    --danger-soft: #3a1f1b;
+    --danger-solid: #f09a8f;
+    --info: #9cc7e2;
+    --info-soft: #18293a;
+    --icon-main: #a9b48a;
+    --icon-shade: #7f8a62;
+    --icon-shine: #fbf6ee;
+    --icon-accent: #e8a17f;
+    --icon-gold: #f2c66d;
+    --icon-muted: #6b675f;
+  }
+}
+
+@theme inline {
+  --color-brand-olive: var(--brand-olive);
+  --color-brand-olive-deep: var(--brand-olive-deep);
+  --color-brand-olive-soft: var(--brand-olive-soft);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-cream-deep: var(--brand-cream-deep);
+  --color-brand-stone: var(--brand-stone);
+  --color-accent-clay: var(--accent-clay);
+  --color-accent-clay-soft: var(--accent-clay-soft);
+  --color-gold: var(--gold);
+  --color-surface-page: var(--surface-page);
+  --color-surface-card: var(--surface-card);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-on-brand: var(--on-brand);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-focus: var(--focus);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-solid: var(--danger-solid);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-modo: var(--modo-acento);
+  --color-modo-soft: var(--modo-acento-soft);
+
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  /* Escala tipográfica do guia */
+  --text-display-xl: 48px;
+  --text-display-xl--line-height: 52px;
+  --text-display-xl--font-weight: 700;
+  --text-display-xl--letter-spacing: -0.01em;
+  --text-display-l: 36px;
+  --text-display-l--line-height: 42px;
+  --text-display-l--font-weight: 700;
+  --text-h1: 28px;
+  --text-h1--line-height: 36px;
+  --text-h1--font-weight: 700;
+  --text-h2: 22px;
+  --text-h2--line-height: 30px;
+  --text-h2--font-weight: 700;
+  --text-h3: 18px;
+  --text-h3--line-height: 26px;
+  --text-h3--font-weight: 600;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body: 16px;
+  --text-body--line-height: 24px;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 20px;
+  --text-button: 16px;
+  --text-button--line-height: 20px;
+  --text-button--font-weight: 700;
+  --text-label: 14px;
+  --text-label--line-height: 20px;
+  --text-label--font-weight: 600;
+  --text-caption: 12px;
+  --text-caption--line-height: 16px;
+  --text-caption--font-weight: 500;
+  --text-overline: 11px;
+  --text-overline--line-height: 16px;
+  --text-overline--font-weight: 700;
+  --text-overline--letter-spacing: 0.08em;
+
+  /* Raios */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* Volume: base sólida (assinatura 3D) */
+  --shadow-card: 0 2px 0 var(--line), 0 8px 24px rgb(46 43 39 / 0.06);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background: var(--surface-page);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 24px;
+  }
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* nunca menor que 16px em campos (evita zoom no iOS) */
+  }
+}
+
+@layer components {
+  /* Base 3D dos botões: 4px que somem ao pressionar */
+  .base-3d {
+    box-shadow: 0 4px 0 var(--base-3d, var(--brand-olive-deep));
+    transition: transform 80ms ease, box-shadow 80ms ease;
+  }
+  .base-3d:active:not(:disabled) {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--base-3d, var(--brand-olive-deep));
+  }
+  /* ícone sobre fundo oliva */
+  .icone-claro {
+    --icon-main: var(--brand-cream);
+    --icon-shade: var(--brand-cream-deep);
+    --icon-fill: var(--brand-olive-deep);
+  }
+  .icone-inativo {
+    --icon-main: var(--icon-muted);
+    --icon-shade: var(--icon-muted);
+    --icon-accent: var(--icon-muted);
+    --icon-gold: var(--icon-muted);
+  }
+}
+
+@media print {
+  .nao-imprimir {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .base-3d {
+    transition: none;
+  }
+}
