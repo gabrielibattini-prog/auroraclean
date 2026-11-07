@@ -2,7 +2,7 @@
 
 Rede de prestadores qualificados em higienização e impermeabilização de estofados, no padrão Aurora Clean.
 
-**Fase atual:** MVP só de front-end. Todas as telas e regras funcionam, mas os dados ficam no seu navegador.
+**Fase atual:** MVP  só de front-end. Todas as telas e regras funcionam, mas os dados ficam no seu navegador.
 O back-end (Supabase) é a próxima fase; o plano está em [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md).
 
 ## Como rodar
